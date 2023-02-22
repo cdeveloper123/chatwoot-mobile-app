@@ -17,5 +17,8 @@ module.exports = MetroConfig.create(evaConfig, {
         inlineRequires: true,
       },
     }),
+    getTransformModulePath: () => {
+      return require.resolve('./transformer');
+    },
   },
 });

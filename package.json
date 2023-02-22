@@ -40,6 +40,10 @@
     ],
     "testRegex": "src/.*.spec.(js|jsx)$"
   },
+  "engines": {
+    "node": "<17",
+    "npm": "<8.2"
+  },
   "dependencies": {
     "@chatwoot/react-native-widget": "^0.0.9",
     "@eva-design/eva": "^2.0.0",
@@ -63,6 +67,7 @@
     "@ui-kitten/eva-icons": "5.0.0",
     "@ui-kitten/metro-config": "5.0.0",
     "axios": "^0.21.2",
+    "cross-env": "^7.0.3",
     "date-fns": "2.21.1",
     "i18n-js": "^3.8.0",
     "lodash.filter": "^4.6.0",

@@ -23,6 +23,7 @@ class ActionCableConnector extends BaseActionCableConnector {
       'message.created': this.onMessageCreated,
       'message.updated': this.onMessageUpdated,
       'conversation.created': this.onConversationCreated,
+      'conversation.updated': this.onConversationUpdated,
       'conversation.status_changed': this.onStatusChange,
       'assignee.changed': this.onAssigneeChanged,
       'conversation.read': this.onConversationRead,
@@ -50,6 +51,10 @@ class ActionCableConnector extends BaseActionCableConnector {
   onConversationCreated = data => {
     store.dispatch(addConversation(data));
     store.dispatch(conversationActions.fetchConversationStats({}));
+  };
+
+  onConversationUpdated = data => {
+    store.dispatch(updateConversation(data));
   };
 
   onStatusChange = data => {

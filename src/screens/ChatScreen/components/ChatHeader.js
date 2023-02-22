@@ -219,6 +219,16 @@ const ChatHeader = ({
         dispatch(conversationActions.muteConversation({ conversationId }));
       }
     }
+    if (itemType === 'block') {
+      if (conversationDetails) {
+        dispatch(conversationActions.blockConversation({ conversationId }));
+      }
+    }
+    if (itemType === 'unblock') {
+      if (conversationDetails) {
+        dispatch(conversationActions.unBlockConversation({ conversationId }));
+      }
+    }
     if (itemType === 'unmute_conversation') {
       const { muted } = conversationDetails;
       if (muted) {

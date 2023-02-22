@@ -203,6 +203,36 @@ const actions = {
       }
     },
   ),
+  blockConversation: createAsyncThunk(
+    'conversations/blockConversation',
+    async ({ conversationId }, { rejectWithValue }) => {
+      try {
+        const apiUrl = `conversations/${conversationId}/block`;
+        const response = await axios.post(apiUrl);
+        return response.data;
+      } catch (error) {
+        if (!error.response) {
+          throw error;
+        }
+        return rejectWithValue(error.response.data);
+      }
+    },
+  ),
+  unBlockConversation: createAsyncThunk(
+    'conversations/blockConversation',
+    async ({ conversationId }, { rejectWithValue }) => {
+      try {
+        const apiUrl = `conversations/${conversationId}/unblock`;
+        const response = await axios.post(apiUrl);
+        return response.data;
+      } catch (error) {
+        if (!error.response) {
+          throw error;
+        }
+        return rejectWithValue(error.response.data);
+      }
+    },
+  ),
   unmuteConversation: createAsyncThunk(
     'conversations/unmuteConversation',
     async ({ conversationId }, { rejectWithValue }) => {

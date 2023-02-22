@@ -7,7 +7,8 @@ import i18n from '../i18n';
 const errorHandler = (e, isFatal) => {
   Sentry.captureException(e);
   if (isFatal) {
-    Alert.alert(
+    // eslint-disable-next-line no-console
+    console.log(
       i18n.t('COMMON.ERROR_TITLE'),
       `${i18n.t('COMMON.ERROR')}: ${isFatal ? 'Fatal:' : ''} ${e.name} ${e.message}${i18n.t(
         'COMMON.REPORT_MESSAGE',

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withStyles } from '@ui-kitten/components';
 import { getConversationUrl } from 'src/helpers/UrlHelper';
 import { Share } from 'react-native';
@@ -13,6 +13,7 @@ const ConversationActionComponent = ({ eva: { style }, onPressAction, conversati
 
   const {
     meta: { assignee, team },
+    blocked,
   } = conversationDetails;
 
   let assignedAgent = null;
@@ -52,6 +53,21 @@ const ConversationActionComponent = ({ eva: { style }, onPressAction, conversati
         thumbnail={assignedAgent.thumbnail}
         availabilityStatus={assignedAgent.availability_status}
       />
+      {blocked === false && (
+        <ConversationActionItem
+          onPressItem={onPressAction}
+          text={i18n.t('CONVERSATION.BLOCK')}
+          itemType="block"
+        />
+      )}
+      {blocked === true && (
+        <ConversationActionItem
+          onPressItem={onPressAction}
+          text={i18n.t('CONVERSATION.UNBLOCK')}
+          itemType="unblock"
+        />
+      )}
+
       {assignee && (
         <ConversationActionItem
           onPressItem={onPressAction}

@@ -12,10 +12,11 @@ let RegisteredApp = App;
 
 AppRegistry.registerComponent(appName, () => RegisteredApp);
 
-if (!__DEV__) {
-  Sentry.init({
-    dsn: Config.SENTRY_DSN,
-    tracesSampleRate: 1.0,
-  });
-}
+// if (!__DEV__) {
+//   Sentry.init({
+//     autoInitializeNativeSdk: false,
+//     dsn: Config.SENTRY_DSN,
+//     tracesSampleRate: 1.0,
+//   });
+// }
 initAnalytics();
