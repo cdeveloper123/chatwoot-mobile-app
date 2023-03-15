@@ -29,6 +29,7 @@
 - Communicate with other team members via private notes
 - Assign statuses to your conversations
   ... and more to come!
+- Block annoying contacts 
 
 <p float="left">
   <img src=".github/conversation.png" alt="conversations" width="250">
@@ -37,6 +38,7 @@
   <img src=".github/filter.png" alt="filter" width="250">
   <img src=".github/notification.png" alt="notification"width="250">
   <img src=".github/settings.png" alt="settings"width="250">
+  <img src=".github/block.gif" width="250"/>
 </p>
 
 ## Download Android/iOS application
