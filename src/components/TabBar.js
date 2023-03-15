@@ -7,8 +7,8 @@ import { View, Text } from 'react-native';
 
 import i18n from '../i18n';
 
-const ConversationIcon = style => <Icon {...style} name="message-circle" />;
-const SettingsIcon = style => <Icon {...style} name="settings" />;
+const ConversationIcon = style => <Icon {...style} name="message-square-outline" />;
+const SettingsIcon = style => <Icon {...style} name="settings-2-outline" />;
 const NotificationIcon = style => <Icon {...style} name="bell" />;
 
 const propTypes = {
